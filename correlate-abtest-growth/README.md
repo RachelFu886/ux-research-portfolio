@@ -1,36 +1,49 @@
 # A/B Testing – Activation Funnel Optimization (Correlate AI)
 
 ## Overview
-I designed and analyzed a real-world A/B test that improved activation rate by **+9%**. The project focused on identifying friction points in the user onboarding funnel and validating a redesigned interaction sequence.
+This project analyzes a real-world A/B test on onboarding activation for an early-stage product. By simplifying CTA hierarchy and reducing visual clutter, the experiment produced a **+9% increase in activation rate**. I independently designed the experiment structure, analyzed event logs, and validated results using statistical testing.
 
-## Hypothesis
-A simplified onboarding screen with clearer CTA hierarchy will increase completion and activation rates.
+## Research Questions
+- Does simplifying the onboarding screen increase activation rate?
+- Which behavioral metrics (completion rate, time on task, drop off) change between variants?
+- How does CTA hierarchy influence user task completion behavior?
 
-## Experiment Setup
-- **Method:** Randomized A/B test  
+## Methods
+- **Experiment type:** Randomized A/B test  
 - **Sample size:** ~4,000 users  
-- **Metrics:**  
-  - Activation rate  
-  - Completion rate  
-  - Time-on-task  
-  - Drop-off points  
-- **Tools:** SQL, Python, internal analytics dashboard  
-- **Duration:** 14 days  
+- **Metrics:** Activation, completion, drop off, time on task  
+- **Tools:** SQL, Python (pandas, scipy), internal event logs  
+- **Statistical test:** Two proportion z test  
+
+## 📊 Experiment Workflow
+
+```mermaid
+flowchart TD
+    A[Identify funnel drop off] --> B[Define hypothesis]
+    B --> C[Design A and B variants]
+    C --> D[Randomly assign users]
+    D --> E[Track events and metrics]
+    E --> F[Run statistical tests]
+    F --> G[Report uplift and product impact]
+```
 
 ## Analysis
-- Cleaned and aggregated event-level logs  
-- Compared conversion rates using a two-proportion z-test  
-- Controlled for traffic variations and device type  
-- Visualized funnel drop-offs  
-- Verified no negative downstream effects  
+- Cleaned and aggregated event level logs  
+- Segmented users by experiment bucket  
+- Computed activation and completion rates and drop off positions  
+- Performed two proportion z tests to validate uplift  
+- Ran sensitivity checks for device type and traffic mix  
+- Visualized funnel conversion steps for both variants  
 
-## Results
-- **Activation Rate:** +9% uplift  
-- **Completion Rate:** +6.5%  
-- **Drop-off reduced** at step 2 (17% → 11%)  
-- Findings statistically significant (**p < 0.05**)  
+## Key Findings
+- Activation increased **+9%** in the simplified variant  
+- Completion rate improved and early drop off decreased  
+- Time on task decreased, suggesting lower cognitive load  
+- Clearer CTA hierarchy led to more consistent user progress  
 
 ## Impact
-- Redesign deployed globally  
-- Framework extended to other onboarding flows  
-- Demonstrated value of experiment-driven UX/product decisions  
+This project demonstrates how UX focused A/B testing can:
+- Improve onboarding efficiency  
+- Reduce friction in early user journeys  
+- Provide measurable evidence for UI simplification  
+- Support data driven design decisions  
