@@ -1,37 +1,53 @@
 # UX Research & Data Science Portfolio
 
-Welcome! I'm **Yiran Fu**, a graduate student in Applied Data Science at the University of Chicago, with a background in **Economics, Psychology, and UX research**. This portfolio highlights selected research and data projects at the intersection of behavioral science, quantitative UX methods, and machine learning.
+Welcome! This portfolio showcases my mixed-methods UX research and applied data science work.  
+Each project highlights a different research or analytical skill set, including experiment design, A/B testing, statistical modeling, and machine learning.
 
-Each project showcases my experience with:
-- Mixed-methods research (experiments, surveys, A/B testing)
-- Data pipelines and analysis in Python/R
-- Translating findings into product and business impact
-
----
-
-## 📁 Projects
-
-### 1. [UX Experiment – IMDb Judgment Study (Tsay Lab)](./tsay-lab-experiment)
-A reproducible behavioral research project combining IMDb/OMDb API data, online experiment (N=120), and statistical modeling in R.
-
-**Keywords:** experiment design · regression analysis · API data · social perception
+## 👩‍💻 About Me
+I am a mixed-methods UX Researcher and Applied Data Scientist with a background in behavioral science.  
+I combine experiments, surveys, quantitative modeling, and data analysis to understand user behavior and support product decisions.
 
 ---
 
-### 2. [A/B Testing – Growth Funnel Optimization (Correlate AI)](./correlate-abtest-growth)
-Real-world A/B testing project on user activation. Includes experiment setup, test/control analysis, and insight reporting that drove a **+9% uplift**.
+## 📁 Portfolio Structure
 
-**Keywords:** A/B testing · funnel metrics · UX conversion · product experimentation
+This repository includes three featured projects:
+
+### ⭐ 1. [UX Experiment – IMDb Judgment Study](./tsay-lab-experiment)
+A behavioral experiment (N ≈ 120) examining how users form judgments under incomplete information, combining IMDb/OMDb API data with statistical modeling in R.
+
+### ⭐ 2. [A/B Testing – Activation Funnel Optimization](./correlate-abtest-growth)
+Designed and analyzed a real-world A/B test that improved activation rate by +9%. Includes experiment design, metrics definition, and statistical evaluation.
+
+### ⭐ 3. [Credit Risk Modeling – XGBoost Pipeline](./credit-risk-xgboost)
+End-to-end machine learning pipeline demonstrating feature engineering, modeling, evaluation, and insights using real-world financing data.
 
 ---
 
-### 3. [Credit Risk Modeling – ML Pipeline](./credit-risk-xgboost)
-End-to-end data science pipeline: data cleaning, feature engineering, and XGBoost model for credit scoring (AUC = 0.79), with insights summarized for business teams.
-
-**Keywords:** Python · XGBoost · ROC-AUC · dashboard-ready insights
+## 🔍 Research & Analytical Focus Areas
+- Experiment design (between/within subjects)
+- Behavioral data analysis
+- Surveys & quantitative modeling
+- A/B testing & causal inference
+- Machine learning pipelines (Python)
+- Statistical testing, regression, EDA
 
 ---
 
-> 📬 Contact: [LinkedIn](https://www.linkedin.com/in/yiran-fu-05139a292/) · Rachelf8866@outlook.com
+## 📂 How to Navigate This Portfolio
+Each project folder contains:
+- A project-specific README  
+- Research questions  
+- Methods and design  
+- Analysis workflow  
+- Key findings and impact  
 
-> 📌 *Note: Datasets are either open-source or simulated for privacy.*
+Click any of the project links above to view details.
+
+---
+
+## 📬 Contact
+If you'd like to connect or learn more about my work:
+
+- **LinkedIn:** https://www.linkedin.com/in/yiran-fu-05139a292  
+- **Email:** Rachelf8866@outlook.com
