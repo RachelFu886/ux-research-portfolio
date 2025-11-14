@@ -1,48 +1,66 @@
-# Credit Risk Modeling – XGBoost Pipeline
+# Credit Risk Modeling – XGBoost Pipeline (Course Project)
 
 ## Overview
-This project builds an end-to-end machine learning pipeline to predict device financing default risk. Using credit, payment, and device related features, the model identifies high risk applicants and provides insight into approval strategy. I handled data engineering, modeling, evaluation, and insight generation.
+This course project builds an end-to-end machine learning pipeline to predict **device financing default risk** using a structured dataset provided in the Verizon Case Study. The goal is to evaluate risk factors, improve approval consistency, and demonstrate practical ML modeling workflows.
+
+I independently handled data cleaning, feature engineering, modeling, evaluation, and business insight generation.
+
+## Dataset
+- **Dataset type:** Course-provided Verizon device financing dataset  
+- **Rows:** ~800–1,200 customer records (varies slightly by group)  
+- **Features include:**  
+  - FICO score  
+  - Down payment amount  
+  - Device cost / device tier  
+  - Installment length  
+  - Account tenure  
+  - Income fields (cleaned + transformed)  
+  - Target: **Default indicator (0/1)**  
 
 ## Research Questions
-- Can we accurately predict the probability of device financing default?  
-- Which features most strongly influence default risk?  
-- How can model predictions inform better approval decisions?
+- Can we predict the probability of device financing default using credit & payment features?
+- What are the strongest drivers of default risk?
+- How can model outputs inform better in-store approval decisions?
 
 ## Methods
-- **Dataset size:** 6,000+ customer records  
-- **Features:** FICO score, down payment, income ratio, device tier, installment behavior  
-- **Model:** XGBoost classifier  
-- **Evaluation:** ROC AUC, confusion matrix, precision and recall  
-- **Tools:** Python (pandas, scikit learn, xgboost), matplotlib  
+- **Models tested:** Logistic Regression → Random Forest → XGBoost  
+- **Final model:** XGBoost classifier  
+- **Evaluation metrics:** ROC-AUC, precision/recall, confusion matrix  
+- **Tools:** Python (pandas, scikit-learn, xgboost, matplotlib)
 
-## 📊 Modeling Pipeline
+---
+
+## 📊 ML Pipeline
 
 ```mermaid
 flowchart TD
-    A[Raw financing data] --> B[Data cleaning]
-    B --> C[Feature engineering]
-    C --> D[Train test split]
-    D --> E[Train XGBoost model]
-    E --> F[Evaluate model]
-    F --> G[Generate risk insights]
+    A[Raw course dataset<br/>Verizon Case Study] --> B[Data Cleaning<br/>Missing values · Outliers]
+    B --> C[Feature Engineering<br/>Income ratios · Device tier]
+    C --> D[Train/Test Split]
+    D --> E[Model Training<br/>LogReg → RF → XGBoost]
+    E --> F[Model Evaluation<br/>ROC · Precision · Recall]
+    F --> G[Insights for Approval Strategy]
 ```
 
 ## Analysis
-- Preprocessed raw credit and payment data  
-- Engineered device tier and income ratio features  
-- Compared baseline models before selecting XGBoost  
-- Tuned key hyperparameters for better performance  
-- Interpreted feature importance rankings for business use  
-- Evaluated trade offs between false positives and false negatives  
+- Cleaned inconsistent income values and normalized device-related fields  
+- Engineered features (e.g., income ratio, device price tier, payment ratio)  
+- Compared multiple baseline models  
+- Tuned XGBoost hyperparameters for improved performance  
+- Interpreted feature importance for credit decision insights  
+- Evaluated trade-offs between false positives (bad approvals) and false negatives (missed good customers)  
 
 ## Key Findings
-- XGBoost achieved strong ROC AUC performance compared to baselines  
-- FICO score, down payment, and device tier were top predictors  
-- Low down payments were strongly associated with higher default rates  
-- Model enabled more consistent and data informed risk assessments  
+- XGBoost outperformed all other models on ROC-AUC  
+- FICO score and down payment amount were the strongest predictors  
+- Lower down payments were strongly associated with higher default probability  
+- Device tier and installment length captured additional risk patterns  
+- Model enabled more consistent decision-making than heuristic/manual judgment  
 
 ## Impact
-This project shows how:
-- Machine learning can improve credit decision policies  
-- Risk modeling can reduce losses from high risk approvals  
-- Model based insights can inform operational guidelines  
+This project demonstrates how:
+- ML models can support retail financing approval decisions  
+- Data-driven risk assessment can reduce financial losses  
+- Feature-level insights can inform down payment policies and approval thresholds  
+
+> **Note:** This is a course project using synthetic or modified Verizon case data—no proprietary Verizon data was accessed.
