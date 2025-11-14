@@ -1,7 +1,7 @@
 # UX Experiment – IMDb Judgment Study (Tsay Lab)
 
 ## Overview
-This project investigates how people evaluate media quality when exposed to partial or biased information. The study combines data collected from IMDb/OMDb APIs and an online behavioral experiment (N ≈ 120). I independently handled data cleaning, experimental materials, and statistical modeling in R.
+This project investigates how people evaluate media quality when exposed to partial or biased information. The study combines IMDb/OMDb API metadata with an online behavioral experiment (N ≈ 120). I independently handled experiment design, data cleaning, and statistical modeling in R.
 
 ## Research Questions
 - How do people judge the “quality” of movies when provided with incomplete metadata?
@@ -10,10 +10,20 @@ This project investigates how people evaluate media quality when exposed to part
 
 ## Methods
 - **Data sources:** IMDb + OMDb API JSON  
-- **Experiment platform:** Qualtrics survey (randomized conditions)  
-- **Design:** Between-subjects, randomized assignment to metadata conditions  
+- **Experiment platform:** Qualtrics survey (between-subjects randomization)  
 - **Measures:** Perceived quality, confidence rating, viewing likelihood  
 - **Tools:** R (tidyverse), ggplot2, statsmodels, correlation tests  
+
+## 📊 Research Workflow
+
+```mermaid
+flowchart TD
+    A[IMDb / OMDb API<br>Raw JSON Data] --> B[Data Cleaning & Normalization<br>(R: tidyverse)]
+    B --> C[Qualtrics Experiment Design<br>Randomized Conditions]
+    C --> D[Participant Responses<br>Behavioral Measures]
+    D --> E[Statistical Modeling<br>Correlations · Regression · EFA]
+    E --> F[Findings & UX Insights<br>Decision-Making Under Uncertainty]
+```
 
 ## Analysis
 - Cleaned noisy API fields and normalized ratings  
