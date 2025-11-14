@@ -1,39 +1,48 @@
 # Credit Risk Modeling – XGBoost Pipeline
 
 ## Overview
-Built an end-to-end machine learning pipeline to predict device financing default risk using payment history, down payment patterns, and credit score data. Project demonstrates my skills in data engineering, modeling, and insight synthesis.
+This project builds an end-to-end machine learning pipeline to predict device financing default risk. Using credit, payment, and device related features, the model identifies high risk applicants and provides insight into approval strategy. I handled data engineering, modeling, evaluation, and insight generation.
 
-## Data & Features
-- **Records:** 6,000+  
-- **Key Features:**  
-  - FICO score  
-  - Down payment amount  
-  - Income ratio  
-  - Installment history  
-  - Device tier  
-- **Target:** Binary default flag  
+## Research Questions
+- Can we accurately predict the probability of device financing default?  
+- Which features most strongly influence default risk?  
+- How can model predictions inform better approval decisions?
 
-## Pipeline
-1. Data cleaning (missing values, outliers)  
-2. Feature engineering  
-3. Train-test split  
-4. Model training using XGBoost  
-5. Evaluation + feature importance  
+## Methods
+- **Dataset size:** 6,000+ customer records  
+- **Features:** FICO score, down payment, income ratio, device tier, installment behavior  
+- **Model:** XGBoost classifier  
+- **Evaluation:** ROC AUC, confusion matrix, precision and recall  
+- **Tools:** Python (pandas, scikit learn, xgboost), matplotlib  
 
-## Evaluation Metrics
-- **AUC:** 0.79  
-- **Accuracy:** 84%  
-- **Balanced precision/recall**  
-- **Confusion Matrix** analyzed in notebook  
+## 📊 Modeling Pipeline
 
-## Key Insights
-- Lower down payments are strongly associated with higher risk  
-- High-tier devices correlate with lower default (self-selection effect)  
-- FICO score is the strongest single predictor  
+```mermaid
+flowchart TD
+    A[Raw financing data] --> B[Data cleaning]
+    B --> C[Feature engineering]
+    C --> D[Train test split]
+    D --> E[Train XGBoost model]
+    E --> F[Evaluate model]
+    F --> G[Generate risk insights]
+```
 
-## Tools
-Python · Pandas · Matplotlib · XGBoost · Jupyter Notebook  
+## Analysis
+- Preprocessed raw credit and payment data  
+- Engineered device tier and income ratio features  
+- Compared baseline models before selecting XGBoost  
+- Tuned key hyperparameters for better performance  
+- Interpreted feature importance rankings for business use  
+- Evaluated trade offs between false positives and false negatives  
+
+## Key Findings
+- XGBoost achieved strong ROC AUC performance compared to baselines  
+- FICO score, down payment, and device tier were top predictors  
+- Low down payments were strongly associated with higher default rates  
+- Model enabled more consistent and data informed risk assessments  
 
 ## Impact
-- Provides a clear, interpretable risk pipeline  
-- Useful for improving approval decisions and reducing revenue loss  
+This project shows how:
+- Machine learning can improve credit decision policies  
+- Risk modeling can reduce losses from high risk approvals  
+- Model based insights can inform operational guidelines  
