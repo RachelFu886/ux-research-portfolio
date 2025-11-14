@@ -6,7 +6,7 @@ This project investigates how people evaluate media quality when exposed to part
 ## Research Questions
 - How do people judge the “quality” of movies when provided with incomplete metadata?
 - Which factors (ratings, genre, popularity) influence perceived credibility?
-- Do participants infer patterns or “rules” even when metadata is absent?
+- Do participants infer patterns or “rules” even when no real pattern exists?
 
 ## Methods
 - **Data sources:** IMDb + OMDb API JSON  
@@ -18,16 +18,16 @@ This project investigates how people evaluate media quality when exposed to part
 
 ```mermaid
 flowchart TD
-    A[IMDb / OMDb API<br>Raw JSON Data] --> B[Data Cleaning & Normalization<br>(R: tidyverse)]
-    B --> C[Qualtrics Experiment Design<br>Randomized Conditions]
-    C --> D[Participant Responses<br>Behavioral Measures]
-    D --> E[Statistical Modeling<br>Correlations · Regression · EFA]
-    E --> F[Findings & UX Insights<br>Decision-Making Under Uncertainty]
+    A[IMDb and OMDb API data] --> B[Data cleaning and normalization]
+    B --> C[Qualtrics experiment design]
+    C --> D[Participant responses]
+    D --> E[Statistical modeling]
+    E --> F[UX findings and insights]
 ```
 
 ## Analysis
 - Cleaned noisy API fields and normalized ratings  
-- Ran Pearson/Spearman correlations  
+- Ran Pearson and Spearman correlations  
 - Performed regression models predicting judgments from metadata  
 - Visualized distributions and interaction effects  
 - Conducted exploratory factor analysis on perception items  
